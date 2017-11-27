@@ -31,20 +31,20 @@ ref.once('value')
 
     if(change.state === true || change.state === 'true'){
         console.log(change.desc + ': on - ' + change.on)
-        cmd.run(rfSwitch + ' ' + change.on);
+        cmd.run(rfSwitch + ' ' + change.on + " | 184");
         setTimeout(function () {
-            cmd.run(rfSwitch + ' ' + change.on);  
+            cmd.run(rfSwitch + ' ' + change.on + " | 185");  
             setTimeout(function () {
-                cmd.run(rfSwitch + ' ' + change.on);  
+                cmd.run(rfSwitch + ' ' + change.on + " | 186");  
             }, 500);
         }, 500);
     } else {
         console.log(change.desc + ': off - ' + change.off)
-        cmd.run(rfSwitch + ' ' + change.off);  
+        cmd.run(rfSwitch + ' ' + change.off + " | 184");  
         setTimeout(function () {
-            cmd.run(rfSwitch + ' ' + change.off);  
+            cmd.run(rfSwitch + ' ' + change.off + " | 185");  
             setTimeout(function () {
-                cmd.run(rfSwitch + ' ' + change.off);  
+                cmd.run(rfSwitch + ' ' + change.off + " | 186");  
             }, 500);
         }, 500);
               
