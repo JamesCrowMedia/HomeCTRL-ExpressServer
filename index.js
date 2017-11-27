@@ -32,9 +32,22 @@ ref.once('value')
     if(change.state === true || change.state === 'true'){
         console.log(change.desc + ': on - ' + change.on)
         cmd.run(rfSwitch + ' ' + change.on);
+        setTimeout(function () {
+            cmd.run(rfSwitch + ' ' + change.on);  
+            setTimeout(function () {
+                cmd.run(rfSwitch + ' ' + change.on);  
+            }, 500);
+        }, 500);
     } else {
         console.log(change.desc + ': off - ' + change.off)
-        cmd.run(rfSwitch + ' ' + change.off);        
+        cmd.run(rfSwitch + ' ' + change.off);  
+        setTimeout(function () {
+            cmd.run(rfSwitch + ' ' + change.off);  
+            setTimeout(function () {
+                cmd.run(rfSwitch + ' ' + change.off);  
+            }, 500);
+        }, 500);
+              
     }
 
      
